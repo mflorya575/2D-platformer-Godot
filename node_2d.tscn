@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://fnqq18hw4cat" path="res://icon.svg" id="1_nsu8c"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2, 5)
