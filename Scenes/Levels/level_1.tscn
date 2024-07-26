@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi2x7j3mwttxc"]
+[gd_scene load_steps=9 format=3 uid="uid://bi2x7j3mwttxc"]
 
 [ext_resource type="PackedScene" uid="uid://cbkf7b1opr5ow" path="res://player.tscn" id="1_m1wwx"]
 [ext_resource type="Texture2D" uid="uid://dyanfx0vdcury" path="res://Sprites/Graphics/Spritesheet/level.png" id="2_a1urs"]
 [ext_resource type="PackedScene" uid="uid://bv7xvwwve7sj4" path="res://Scenes/Levels/Resources/game_rules.tscn" id="3_eansm"]
 [ext_resource type="PackedScene" uid="uid://c4rdb2srmk3hr" path="res://Scenes/Levels/Resources/spike.tscn" id="4_uiyhe"]
+[ext_resource type="AudioStream" uid="uid://bsar8akmp37ae" path="res://Sprites/Sounds/background_music.ogg" id="5_vitac"]
+[ext_resource type="Script" path="res://Scenes/Levels/BackgroundMusic.gd" id="6_p4hrh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yof1n"]
 texture = ExtResource("2_a1urs")
@@ -545,3 +547,9 @@ layer_0/tile_data = PackedInt32Array(393223, 458752, 8, 393224, 458752, 8, 39322
 
 [node name="Spike" parent="Spikes" instance=ExtResource("4_uiyhe")]
 position = Vector2(1167, 247)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_vitac")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("6_p4hrh")

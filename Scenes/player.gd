@@ -7,6 +7,8 @@ var lives = 3
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var game_rules = $"../GameRules"
 @onready var sprite = $Sprite2D
+@onready var jump_sound = $Sounds/Jump
+@onready var hurt_sound = $Sounds/Damage
 
 func _physics_process(delta):
 	move()
@@ -27,6 +29,7 @@ func move():
 func jump():
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jump_sound.play()
 		
 func apply_gravity(delta):
 	if not is_on_floor():
@@ -46,6 +49,7 @@ func animate():
 		sprite.flip_h = false
 		
 func hurt():
+	hurt_sound.play()
 	velocity.y = JUMP_VELOCITY * 0.75
 	lives -= 1
 	if lives < 1:
