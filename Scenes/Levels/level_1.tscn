@@ -24,3 +24,22 @@ visible = false
 position = Vector2(-1.39993, 1)
 scale = Vector2(1.61665, -0.886186)
 shape = SubResource("RectangleShape2D_up67a")
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(176, 360)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor2"]
+position = Vector2(-1.39999, 1)
+scale = Vector2(4.96, 1)
+texture = ExtResource("2_h1ia0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+visible = false
+position = Vector2(-1.39993, 1)
+scale = Vector2(1.61665, -0.886186)
+shape = SubResource("RectangleShape2D_up67a")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 321)
+zoom = Vector2(0.5, 0.5)
