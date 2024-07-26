@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://fibygifobars"]
+
+[ext_resource type="FontFile" uid="uid://byxkow0w42v7d" path="res://Sprites/Font.ttf" id="1_6nlpp"]
+
+[resource]
+font = ExtResource("1_6nlpp")
+font_size = 64
+outline_size = 56
+outline_color = Color(0.466667, 0.764706, 1, 1)
