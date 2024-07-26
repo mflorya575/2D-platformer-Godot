@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmv0qbn5stiw2"]
+[gd_scene load_steps=6 format=3 uid="uid://cmv0qbn5stiw2"]
 
 [ext_resource type="Texture2D" uid="uid://yvdol75ximp1" path="res://Sprites/Graphics/Backgrounds/background_1.png" id="1_dqcis"]
+[ext_resource type="Script" path="res://Scenes/Levels/game_o_ver.gd" id="1_qflir"]
 [ext_resource type="LabelSettings" uid="uid://fibygifobars" path="res://Scenes/Levels/Resources/font_settings.tres" id="2_hqgcr"]
 [ext_resource type="FontFile" uid="uid://byxkow0w42v7d" path="res://Sprites/Font.ttf" id="3_84bn0"]
 
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qflir")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -51,3 +53,6 @@ text = "Перезапук"
 layout_mode = 2
 theme = SubResource("Theme_qwa8n")
 text = "Выйти"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
