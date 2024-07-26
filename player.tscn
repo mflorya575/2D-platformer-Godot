@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbkf7b1opr5ow"]
+[gd_scene load_steps=20 format=3 uid="uid://cbkf7b1opr5ow"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_yoocv"]
 [ext_resource type="Texture2D" uid="uid://bp2tysl7bloih" path="res://Sprites/Graphics/Player/p3_walk/p3_walk08.png" id="2_1t5l2"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://c6gcb5ntwlhhb" path="res://Sprites/Graphics/Player/p3_walk/p3_walk06.png" id="11_5gwtc"]
 [ext_resource type="Texture2D" uid="uid://cg4noadr0eaos" path="res://Sprites/Graphics/Player/p3_walk/p3_walk07.png" id="12_0xfmf"]
 [ext_resource type="Texture2D" uid="uid://dahd4oilhapqm" path="res://Sprites/Graphics/Player/p3_walk/p3_walk11.png" id="13_l5am6"]
+[ext_resource type="Texture2D" uid="uid://yvdol75ximp1" path="res://Sprites/Graphics/Backgrounds/background_1.png" id="14_sa3bq"]
+[ext_resource type="Texture2D" uid="uid://df5ov05ovbpr6" path="res://Sprites/Graphics/Backgrounds/background_2.png" id="15_hgh5u"]
+[ext_resource type="Texture2D" uid="uid://b8mt4dcqjh3d4" path="res://Sprites/Graphics/Backgrounds/background_3.png" id="16_1pkue"]
+[ext_resource type="Texture2D" uid="uid://c7j5s2v5f1bro" path="res://Sprites/Graphics/Backgrounds/background4.png" id="17_g4jo8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eeiil"]
 animations = [{
@@ -94,3 +98,46 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2)
 shape = SubResource("CapsuleShape2D_skcqf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Camera2D"]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_mirroring = Vector2(2048, 2048)
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("14_sa3bq")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
+motion_offset = Vector2(0, -1024)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("15_hgh5u")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_offset = Vector2(0, -1024)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer3"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("16_1pkue")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_offset = Vector2(0, -1024)
+motion_mirroring = Vector2(2048, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Camera2D/ParallaxBackground/ParallaxLayer4"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("17_g4jo8")
