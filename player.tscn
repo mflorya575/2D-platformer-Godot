@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbkf7b1opr5ow"]
+[gd_scene load_steps=4 format=3 uid="uid://cbkf7b1opr5ow"]
 
 [ext_resource type="Texture2D" uid="uid://bmm65jfh5ysmv" path="res://Sprites/Graphics/Player/p3_front.png" id="1_p8fs5"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_yoocv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_skcqf"]
 radius = 23.0
@@ -8,6 +9,7 @@ height = 88.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(573, 325)
+script = ExtResource("1_yoocv")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
