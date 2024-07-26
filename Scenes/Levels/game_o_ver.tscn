@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmv0qbn5stiw2"]
+[gd_scene load_steps=5 format=3 uid="uid://cmv0qbn5stiw2"]
 
 [ext_resource type="Texture2D" uid="uid://yvdol75ximp1" path="res://Sprites/Graphics/Backgrounds/background_1.png" id="1_dqcis"]
+[ext_resource type="LabelSettings" uid="uid://fibygifobars" path="res://Scenes/Levels/Resources/font_settings.tres" id="2_hqgcr"]
+[ext_resource type="FontFile" uid="uid://byxkow0w42v7d" path="res://Sprites/Font.ttf" id="3_84bn0"]
+
+[sub_resource type="Theme" id="Theme_qwa8n"]
+default_font = ExtResource("3_84bn0")
+default_font_size = 24
 
 [node name="GameOVer" type="Control"]
 layout_mode = 3
@@ -19,3 +25,29 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_dqcis")
 expand_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Игра окончена"
+label_settings = ExtResource("2_hqgcr")
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_qwa8n")
+text = "Перезапук"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_qwa8n")
+text = "Выйти"
