@@ -532,11 +532,10 @@ sources/0 = SubResource("TileSetAtlasSource_yof1n")
 [node name="Player" parent="." instance=ExtResource("1_m1wwx")]
 collision_mask = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(577, 321)
-zoom = Vector2(0.5, 0.5)
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.75, 0.75)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xkvom")
 format = 2
-layer_0/tile_data = PackedInt32Array(393223, 458752, 8, 393224, 458752, 8, 393225, 458752, 8, 393226, 524288, 8, 393222, 524288, 10)
+layer_0/tile_data = PackedInt32Array(393223, 458752, 8, 393224, 458752, 8, 393225, 458752, 8, 393226, 524288, 8, 393222, 524288, 10, 262163, 524288, 8, 262162, 458752, 8, 262161, 458752, 8, 262160, 458752, 8, 262159, 524288, 10, 65549, 524288, 8, 65548, 524288, 10)

@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-const SPEED = 100
-const JUMP_VELOCITY = -300
+const SPEED = 300
+const JUMP_VELOCITY = -560
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var sprite = $Sprite2D
 
@@ -30,7 +30,7 @@ func apply_gravity(delta):
 		velocity.y += gravity * delta
 		
 func animate():
-	if velocity.y != 0:
+	if velocity.y != 0 or is_on_ceiling():
 		sprite.play("jump")
 	elif velocity.x != 0:
 		sprite.play("walk")
