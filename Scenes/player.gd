@@ -3,7 +3,9 @@ extends CharacterBody2D
 
 const SPEED = 300
 const JUMP_VELOCITY = -560
+var lives = 3
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+@onready var game_rules = $"../GameRules"
 @onready var sprite = $Sprite2D
 
 func _physics_process(delta):
@@ -11,6 +13,7 @@ func _physics_process(delta):
 	jump()
 	apply_gravity(delta)
 	animate()
+	# hurt()
 
 func move():
 	if Input.is_action_pressed("left") and not Input.is_action_pressed("right"):
@@ -41,4 +44,10 @@ func animate():
 		sprite.flip_h = true
 	elif velocity.x > 0:
 		sprite.flip_h = false
+		
+func hurt():
+	velocity.y = JUMP_VELOCITY * 0.75
+	lives -= 1
+	if lives < 1:
+		game_rules.end_game()
 		
